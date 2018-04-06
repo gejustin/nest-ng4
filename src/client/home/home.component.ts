@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/platform-browser';
 
 @Component({
     selector: 'home',
     template: `<div>Hello {{name}}!</div>`,
 })
 export class HomeComponent {
-    public name: string = 'world';
+
+    constructor(@Inject(DOCUMENT) private document: any) {
+    }
+    public name: string = 'World!';
 }
